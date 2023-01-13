@@ -7,11 +7,16 @@
 html, body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-size: .6rem;
   font-family: 'Inter', sans-serif;
 }
 
 .container {
   width: 100%;
+  min-height: 100vh;
 }
 
 /*HEADER*/
@@ -24,23 +29,108 @@ html, body {
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  letter-spacing: -.5px;
+  font-weight: 500;
 }
 
 .header-logo {
   margin-right: .5rem;
-  width: 1.5rem;
+  width: 24px;
   height: auto;
 }
 
+/*MAIN*/
+
+.main-content {
+  padding: 1.5em;
+}
+
+.place {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2.25rem;
+  width: 100%;
+}
+
+.place:last-child {
+  margin-bottom: 0;
+}
+
+.place-img {
+  width: 125px;
+  min-height: 168px;
+  align-self: stretch;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.place-location-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: .5em;
+}
+
+.place-location-country {
+  margin: 0;
+  padding: 0 .75em 0 .25em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.place-location-map-link {
+  color: #918E9B;
+}
+
+.place-location-map-link:hover,
+.place-location-map-link:focus {
+  color: #F55A5A;
+}
+
+.place-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 0 1em 0;
+}
+
+.place-dates{
+  font-weight: 700;
+  margin: 0 0 .5em 0; 
+}
+
+.place-description {
+  margin: 0;
+  line-height: 1.5;
+}
+ 
 /*MEDIA QUERIES*/
 
+@media (min-width: 400px) {
+  body {
+    font-size: .8rem;
+  }
+}
+
 @media (min-width: 800px) {
+  body {
+    font-size: 1rem;
+  }
   .container {
     width: 60%;
-    margin: auto
+    margin: auto;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, .25);
   }
   .header {
-    box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
+    box-shadow: unset;
+  }
+  .main-content {
+    padding: 2.5em;
+  }
+  .place {
+    gap: 1.5em;
+  }
+  .place-description {
+    line-height: 1.3;
   }
 }
